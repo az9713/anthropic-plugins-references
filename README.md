@@ -6,7 +6,7 @@ A plain-English reference guide for every plugin and skill across Anthropic's of
 
 | File | Description |
 |------|-------------|
-| `plugin-directory.html` | High-level overview of all plugins across the 4 repositories |
+| `plugin-directory.html` | High-level overview of all plugins across the 5 repositories |
 | `plugin-skills-detailed.html` | **Main reference** — every individual skill in every plugin, searchable |
 | `README.txt` | Original list of source repositories |
 
@@ -37,10 +37,10 @@ The high-level overview missed individual skills. A second research pass drilled
 - **When to use it** — personal and professional scenarios
 - **Output** — what you actually get
 
-The final file covers 200+ skills across all 4 repos, with:
+The final file covers 300+ skills across all 5 repos, with:
 - Collapsible plugin sections (click to expand)
 - Live search bar that auto-expands matching plugins
-- Color-coded by repo (blue / purple / green / amber)
+- Color-coded by repo (blue / purple / green / amber / red)
 - Dark theme, no external dependencies
 
 ---
@@ -51,6 +51,7 @@ The final file covers 200+ skills across all 4 repos, with:
 - https://github.com/anthropics/claude-plugins-official
 - https://github.com/anthropics/financial-services
 - https://github.com/anthropics/claude-plugins-community
+- https://github.com/anthropics/claude-for-legal
 
 ---
 
