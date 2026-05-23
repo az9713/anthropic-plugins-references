@@ -271,6 +271,10 @@
     .r4 .repo-badge { background: #3a2a1a; color: var(--accent4); }
     .r4 .repo-header h2 { color: var(--accent4); }
 
+    .r5 .repo-badge { background: #3a1a1a; color: #dc2626; }
+    .r5 .repo-header h2 { color: #dc2626; }
+    .r5 .plugin-card:hover { border-color: #dc2626; }
+
     @media (max-width: 640px) {
       header { padding: 32px 20px 24px; }
       header h1 { font-size: 1.7rem; }
@@ -285,8 +289,7 @@
 
 <header>
   <h1>Anthropic Plugin Directory</h1>
-  <p>Every plugin across all 4 official repos — explained in plain language for personal use.</p>
-  <span class="note">⚠️ Your README.txt lists 4 repos (not 5) — all 4 are covered here.</span>
+  <p>Every plugin across all 5 official repos — explained in plain language for personal use.</p>
 </header>
 
 <nav>
@@ -295,6 +298,7 @@
   <a href="#repo2">Repo 2: Official Tools</a>
   <a href="#repo3">Repo 3: Financial Services</a>
   <a href="#repo4">Repo 4: Community (600+)</a>
+  <a href="#repo5">Repo 5: Legal</a>
 </nav>
 
 <!-- QUICK REFERENCE -->
@@ -319,6 +323,11 @@
       <tr><td>Build a financial model (DCF, LBO)</td><td>model-builder</td><td>Repo 3</td></tr>
       <tr><td>Pitch investors / raise money</td><td>pitch-agent</td><td>Repo 3</td></tr>
       <tr><td>Discover 600+ more tools</td><td>Full marketplace</td><td>Repo 4</td></tr>
+      <tr><td>Review NDAs &amp; contracts before signing</td><td>commercial-legal</td><td>Repo 5</td></tr>
+      <tr><td>Manage workplace investigations</td><td>employment-legal</td><td>Repo 5</td></tr>
+      <tr><td>Track patents, trademarks &amp; open source</td><td>ip-legal</td><td>Repo 5</td></tr>
+      <tr><td>GDPR, DSARs &amp; privacy compliance</td><td>privacy-legal</td><td>Repo 5</td></tr>
+      <tr><td>Law school study (IRAC, Socratic drill, bar prep)</td><td>law-student</td><td>Repo 5</td></tr>
     </tbody>
   </table>
 </section>
@@ -976,6 +985,172 @@
   <div style="text-align:center;margin-top:32px;padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:12px;">
     <div style="font-size:1rem;font-weight:700;margin-bottom:8px;color:var(--accent4);">600+ plugins and counting</div>
     <div style="color:var(--muted);font-size:0.88rem;">Browse the full marketplace at <strong style="color:var(--text);">claude.com/plugins</strong> · Submit your own at <strong style="color:var(--text);">clau.de/plugin-directory-submission</strong></div>
+  </div>
+</section>
+
+<!-- REPO 5 -->
+<section class="repo-section r5" id="repo5">
+  <div class="repo-header">
+    <div class="repo-badge">5</div>
+    <div>
+      <h2>claude-for-legal</h2>
+      <div class="subtitle">12 plugins for in-house legal teams, law students, and legal clinics — each one knows the workflow, terminology, and escalation rules for its practice area.</div>
+      <div class="repo-link">github.com/anthropics/claude-for-legal</div>
+    </div>
+  </div>
+
+  <div class="section-label">Practice Area Plugins</div>
+  <div class="plugin-grid">
+
+    <div class="plugin-card">
+      <h3>commercial-legal</h3>
+      <div class="tagline">Contract review for in-house counsel</div>
+      <ul>
+        <li>Reviews NDAs, SaaS MSAs, vendor agreements</li>
+        <li>Traces amendment history across contract versions</li>
+        <li>Flags escalations to the right approver</li>
+        <li>Tracks upcoming renewals and auto-renewals</li>
+      </ul>
+      <div class="personal-use">Review leases, freelance agreements, and subscriptions before signing. Always verify with a real lawyer for anything important.</div>
+    </div>
+
+    <div class="plugin-card">
+      <h3>corporate-legal</h3>
+      <div class="tagline">M&amp;A, governance &amp; entity management</div>
+      <ul>
+        <li>Drafts board minutes in your house format</li>
+        <li>Extracts issues from M&amp;A due diligence data rooms</li>
+        <li>Generates deal closing checklists</li>
+        <li>Tracks entity compliance obligations and deadlines</li>
+      </ul>
+      <div class="personal-use">Useful if you run a small business with a board or are going through a funding round.</div>
+    </div>
+
+    <div class="plugin-card">
+      <h3>employment-legal</h3>
+      <div class="tagline">HR legal — investigations, policies &amp; expansion</div>
+      <ul>
+        <li>Manages workplace investigations end-to-end</li>
+        <li>Analyzes employment law for new countries before you hire</li>
+        <li>Drafts and updates employee policies</li>
+        <li>Reviews terminations for legal risk</li>
+      </ul>
+      <div class="personal-use">Small business owners: helps you handle HR legal issues correctly from the start.</div>
+    </div>
+
+    <div class="plugin-card">
+      <h3>ip-legal</h3>
+      <div class="tagline">Patents, trademarks, trade secrets &amp; open source</div>
+      <ul>
+        <li>Captures invention disclosures from engineers</li>
+        <li>Clears product names and features for IP risk</li>
+        <li>Analyzes infringement claims against your product</li>
+        <li>Reviews open source license compliance</li>
+      </ul>
+      <div class="personal-use">If you're launching a product or brand, the clearance and OSS review skills are immediately useful.</div>
+    </div>
+
+    <div class="plugin-card">
+      <h3>litigation-legal</h3>
+      <div class="tagline">Litigation management for in-house counsel</div>
+      <ul>
+        <li>Analyzes incoming demand letters for risk</li>
+        <li>Drafts legal hold notices when litigation is anticipated</li>
+        <li>Preps witnesses for depositions</li>
+        <li>Reviews privilege logs before production</li>
+      </ul>
+      <div class="personal-use">If you receive a demand letter or legal threat, helps you understand it before calling a lawyer.</div>
+    </div>
+
+    <div class="plugin-card">
+      <h3>privacy-legal</h3>
+      <div class="tagline">GDPR, CCPA, DSARs &amp; privacy compliance</div>
+      <ul>
+        <li>Reviews Data Processing Agreements against GDPR Article 28</li>
+        <li>Manages Data Subject Access Requests end-to-end</li>
+        <li>Conducts Privacy Impact Assessments for new features</li>
+        <li>Tracks privacy law changes affecting your program</li>
+      </ul>
+      <div class="personal-use">If you build products that collect personal data, the DSAR and PIA skills keep you compliant.</div>
+    </div>
+
+    <div class="plugin-card">
+      <h3>regulatory-legal</h3>
+      <div class="tagline">Regulatory monitoring &amp; compliance</div>
+      <ul>
+        <li>Monitors Federal Register and agency feeds for relevant rules</li>
+        <li>Identifies gaps between your practices and new regulations</li>
+        <li>Drafts formal public comment letters for rulemakings</li>
+        <li>Redrafts internal policies to comply with updated rules</li>
+      </ul>
+      <div class="personal-use">For businesses in regulated industries — stays ahead of rule changes before they become enforcement problems.</div>
+    </div>
+
+    <div class="plugin-card">
+      <h3>product-legal</h3>
+      <div class="tagline">Product counsel — launch reviews &amp; feature risk</div>
+      <ul>
+        <li>Reviews product features for legal risk before engineering builds</li>
+        <li>Checks marketing claims for FTC compliance</li>
+        <li>Runs legal readiness checks before product launches</li>
+        <li>Quick "is this a legal problem?" triage for product teams</li>
+      </ul>
+      <div class="personal-use">Anyone shipping consumer products — catch legal issues during design, not after launch.</div>
+    </div>
+
+    <div class="plugin-card">
+      <h3>ai-governance-legal</h3>
+      <div class="tagline">AI compliance — EU AI Act, NIST RMF, vendor review</div>
+      <ul>
+        <li>Builds and maintains an AI system inventory</li>
+        <li>Reviews vendor AI systems against your governance standards</li>
+        <li>Identifies gaps vs. EU AI Act and NIST AI RMF</li>
+        <li>Drafts AI use policies and impact assessments</li>
+      </ul>
+      <div class="personal-use">Any company using or building AI tools needs this as regulations tighten globally.</div>
+    </div>
+
+  </div>
+
+  <div class="section-label">Education &amp; Clinic Plugins</div>
+  <div class="plugin-grid">
+
+    <div class="plugin-card">
+      <h3>law-student</h3>
+      <div class="tagline">Law school study assistant</div>
+      <ul>
+        <li>Briefs cases with doctrinal context and professor focus</li>
+        <li>Runs Socratic cold-call drills</li>
+        <li>Coaches IRAC exam writing with grades and feedback</li>
+        <li>Builds outlines, flashcards, and bar prep questions</li>
+      </ul>
+      <div class="personal-use">1Ls through bar prep — replaces expensive tutors for most study tasks.</div>
+    </div>
+
+    <div class="plugin-card">
+      <h3>legal-clinic</h3>
+      <div class="tagline">Law clinic case management</div>
+      <ul>
+        <li>Conflict-checks and opens new client matters</li>
+        <li>Drafts motions, briefs, and client letters</li>
+        <li>Tracks all court deadlines across active matters</li>
+        <li>Manages supervisor review queues</li>
+      </ul>
+      <div class="personal-use">Law students in clinical programs — handles the administrative burden so you focus on lawyering.</div>
+    </div>
+
+    <div class="plugin-card">
+      <h3>legal-builder-hub</h3>
+      <div class="tagline">Plugin manager for the claude-for-legal ecosystem</div>
+      <ul>
+        <li>Installs and configures legal plugins from the registry</li>
+        <li>Keeps all installed plugins updated</li>
+        <li>Browses available plugins by practice area</li>
+        <li>Suggests skills you'd find useful based on your usage</li>
+      </ul>
+      <div class="personal-use">Your starting point — install just the practice areas you need.</div>
+    </div>
+
   </div>
 </section>
 
