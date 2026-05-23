@@ -6,15 +6,13 @@ A plain-English reference guide for every plugin and skill across Anthropic's of
 
 | File | Description |
 |------|-------------|
-| `plugin-directory.html` | High-level overview of all plugins across the 5 repositories |
-| `plugin-skills-detailed.html` | **Main reference** — every individual skill in every plugin, searchable |
+| `index.html` | **Main reference** — two-tab interface combining the plugin overview and full skill detail |
 | `README.txt` | Original list of source repositories |
 
 **Live on GitHub Pages:**
-- https://az9713.github.io/anthropic-plugins-references/plugin-skills-detailed.html
-- https://az9713.github.io/anthropic-plugins-references/plugin-directory.html
+- https://az9713.github.io/anthropic-plugins-references/index.html
 
-Or open the HTML files locally in any browser — no server needed, no dependencies.
+Or open `index.html` locally in any browser — no server needed, no dependencies.
 
 ---
 
