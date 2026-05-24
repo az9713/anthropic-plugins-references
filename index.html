@@ -28,6 +28,37 @@ nav a.r4{border-color:rgba(245,158,11,.4);}nav a.r4:hover{border-color:var(--r4)
 nav a.r5{border-color:rgba(220,38,38,.4);}nav a.r5:hover{border-color:var(--r5);}
 #tab-overview{display:none;}#tab-overview.active{display:block;}
 #tab-skills{display:none;}#tab-skills.active{display:block;}
+#tab-workflows{display:none;}#tab-workflows.active{display:block;}
+/* Workflow tab styles */
+#tab-workflows{max-width:960px;margin:0 auto;padding:40px 24px 80px;}
+.wf-intro{margin-bottom:36px;}
+.wf-intro h2{font-size:1.5rem;font-weight:800;color:var(--accent2);margin-bottom:8px;}
+.wf-intro p{color:var(--muted);font-size:.9rem;max-width:640px;}
+.wf-group{margin-bottom:48px;}
+.wf-group-label{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border);padding-bottom:8px;margin-bottom:20px;}
+.wf-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(420px,1fr));gap:20px;}
+.wf-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 24px;transition:border-color .2s,transform .15s;}
+.wf-card:hover{transform:translateY(-2px);}
+.wf-card-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px;}
+.wf-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
+.wf-title{font-size:1.05rem;font-weight:800;color:var(--text);margin-bottom:3px;}
+.wf-tagline{font-size:.82rem;color:var(--muted);font-style:italic;}
+.wf-steps{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.wf-step{display:flex;gap:10px;align-items:flex-start;font-size:.84rem;}
+.wf-step-num{flex-shrink:0;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;background:var(--surface2);color:var(--muted);margin-top:1px;}
+.wf-step-body{flex:1;}
+.wf-step-action{color:var(--text);font-weight:600;}
+.wf-step-source{display:flex;gap:5px;flex-wrap:wrap;margin-top:3px;}
+.wf-badge{font-size:.7rem;font-weight:600;padding:1px 7px;border-radius:10px;border:1px solid;}
+.wb-r1{color:var(--r1);background:#0d1629;border-color:rgba(108,142,247,.35);}
+.wb-r2{color:var(--r2);background:#150d29;border-color:rgba(167,139,250,.35);}
+.wb-r3{color:var(--r3);background:#0d2015;border-color:rgba(52,211,153,.35);}
+.wb-r4{color:var(--r4);background:#201500;border-color:rgba(245,158,11,.35);}
+.wb-r5{color:#f87171;background:#1f0d0d;border-color:rgba(220,38,38,.35);}
+.wf-tip{margin-top:14px;padding:8px 12px;background:var(--tag-bg);border-radius:6px;font-size:.79rem;color:var(--accent3);border-left:3px solid var(--accent3);}
+.wf-tip::before{content:"Tip: ";font-weight:700;}
+.wf-card:hover{border-color:var(--accent2);}
+@media(max-width:640px){.wf-cards{grid-template-columns:1fr;}}
 .repo{max-width:960px;margin:40px auto 0;padding:0 20px;}
 .repo-hdr{display:flex;align-items:center;gap:14px;margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid var(--border);}
 .repo-num{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.2rem;flex-shrink:0;}
@@ -147,6 +178,7 @@ footer{text-align:center;padding:40px;color:var(--muted);font-size:.8rem;margin-
 <div class="tabs">
   <button class="tab-btn active" data-tab="overview" onclick="switchTab('overview')">Plugin Overview</button>
   <button class="tab-btn" data-tab="skills" onclick="switchTab('skills')">Skill Detail</button>
+  <button class="tab-btn" data-tab="workflows" onclick="switchTab('workflows')">Workflows</button>
 </div>
 <nav>
   <div id="nav-overview" style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;width:100%;">
@@ -163,6 +195,13 @@ footer{text-align:center;padding:40px;color:var(--muted);font-size:.8rem;margin-
     <a href="#r3" class="r3">Financial Services</a>
     <a href="#r4" class="r4">Community</a>
     <a href="#r5" class="r5">Legal</a>
+  </div>
+  <div id="nav-workflows" style="display:none;gap:6px;flex-wrap:wrap;justify-content:center;width:100%;">
+    <a href="#wg-professional">Professional</a>
+    <a href="#wg-legal">Legal &amp; Contracts</a>
+    <a href="#wg-finance">Finance &amp; Investment</a>
+    <a href="#wg-personal">Personal &amp; Freelance</a>
+    <a href="#wg-startup">Startup &amp; Business</a>
   </div>
 </nav>
 <section id="tab-overview" class="active">
@@ -1945,17 +1984,257 @@ footer{text-align:center;padding:40px;color:var(--muted);font-size:.8rem;margin-
 </section>
 
 <div class="no-results" id="no-results">No skills match your search. Try different keywords.</div>
-<footer>Generated from live GitHub repo content · 5 repos · 70+ plugins · 300+ skills documented</footer>
 <footer>Generated from live GitHub repo content &middot; 5 repos &middot; 70+ plugins &middot; 300+ skills documented</footer>
 </section>
+
+<!-- ═══════════════════════════════════════════════════════ TAB 3: WORKFLOWS -->
+<section id="tab-workflows">
+
+<div class="wf-intro">
+  <h2>Cross-Repo Workflows</h2>
+  <p>Real-world goals that combine skills from multiple plugins and repositories. Each step shows which plugin handles it and where to find it.</p>
+</div>
+
+<!-- ── PROFESSIONAL ──────────────────────────────────────────────────── -->
+<div class="wf-group" id="wg-professional">
+  <div class="wf-group-label">Professional</div>
+  <div class="wf-cards">
+
+    <div class="wf-card">
+      <div class="wf-card-header">
+        <div class="wf-icon" style="background:#0d1629;">📋</div>
+        <div>
+          <div class="wf-title">Run a Quarterly Planning Cycle</div>
+          <div class="wf-tagline">From capacity planning to board-ready financials</div>
+        </div>
+      </div>
+      <ol class="wf-steps">
+        <li class="wf-step"><span class="wf-step-num">1</span><div class="wf-step-body"><span class="wf-step-action">Capacity plan &amp; headcount forecast</span><div class="wf-step-source"><span class="wf-badge wb-r1">Operations Plugin · capacity-plan</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">2</span><div class="wf-step-body"><span class="wf-step-action">Build a budget model (revenue, opex, scenarios)</span><div class="wf-step-source"><span class="wf-badge wb-r3">financial-services · model-builder</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">3</span><div class="wf-step-body"><span class="wf-step-action">Write the roadmap deck &amp; prioritize features</span><div class="wf-step-source"><span class="wf-badge wb-r1">Product Management Plugin · roadmap-builder</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">4</span><div class="wf-step-body"><span class="wf-step-action">Compliance check on any regulatory commitments</span><div class="wf-step-source"><span class="wf-badge wb-r5">claude-for-legal · compliance-tracking</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">5</span><div class="wf-step-body"><span class="wf-step-action">Draft exec status report &amp; send</span><div class="wf-step-source"><span class="wf-badge wb-r1">Operations Plugin · status-report</span></div></div></li>
+      </ol>
+      <div class="wf-tip">Run steps 1–2 in parallel — capacity and finance can model independently, then reconcile.</div>
+    </div>
+
+    <div class="wf-card">
+      <div class="wf-card-header">
+        <div class="wf-icon" style="background:#1a3a2a;">👩‍💻</div>
+        <div>
+          <div class="wf-title">Onboard a New Engineer</div>
+          <div class="wf-tagline">From offer letter to first commit</div>
+        </div>
+      </div>
+      <ol class="wf-steps">
+        <li class="wf-step"><span class="wf-step-num">1</span><div class="wf-step-body"><span class="wf-step-action">Draft offer letter &amp; comp benchmarking</span><div class="wf-step-source"><span class="wf-badge wb-r1">HR Plugin · offer-letter, compensation-analysis</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">2</span><div class="wf-step-body"><span class="wf-step-action">Review employment contract &amp; IP assignment clauses</span><div class="wf-step-source"><span class="wf-badge wb-r5">claude-for-legal · employment-legal · contract-review</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">3</span><div class="wf-step-body"><span class="wf-step-action">Build 30-60-90 day onboarding plan</span><div class="wf-step-source"><span class="wf-badge wb-r1">HR Plugin · onboarding-plan</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">4</span><div class="wf-step-body"><span class="wf-step-action">Create dev environment runbook &amp; architecture walkthrough</span><div class="wf-step-source"><span class="wf-badge wb-r1">Engineering Plugin · runbook-builder, adr-writer</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">5</span><div class="wf-step-body"><span class="wf-step-action">Set up git workflow &amp; auto commit messages</span><div class="wf-step-source"><span class="wf-badge wb-r2">Official · commit-commands, pr-reviewer</span></div></div></li>
+      </ol>
+    </div>
+
+    <div class="wf-card">
+      <div class="wf-card-header">
+        <div class="wf-icon" style="background:#0d1629;">🔬</div>
+        <div>
+          <div class="wf-title">Launch a Research Project</div>
+          <div class="wf-tagline">From literature gap to grant proposal</div>
+        </div>
+      </div>
+      <ol class="wf-steps">
+        <li class="wf-step"><span class="wf-step-num">1</span><div class="wf-step-body"><span class="wf-step-action">Literature review across PubMed, bioRxiv, Consensus</span><div class="wf-step-source"><span class="wf-badge wb-r1">Bio-Research Plugin · literature-review</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">2</span><div class="wf-step-body"><span class="wf-step-action">Check IP landscape — existing patents on your approach</span><div class="wf-step-source"><span class="wf-badge wb-r5">claude-for-legal · ip-legal · patent-landscape</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">3</span><div class="wf-step-body"><span class="wf-step-action">Design bioinformatics pipeline (nf-core)</span><div class="wf-step-source"><span class="wf-badge wb-r1">Bio-Research Plugin · pipeline-designer</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">4</span><div class="wf-step-body"><span class="wf-step-action">Build grant budget model &amp; cost projections</span><div class="wf-step-source"><span class="wf-badge wb-r3">financial-services · model-builder</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">5</span><div class="wf-step-body"><span class="wf-step-action">Draft the grant proposal narrative</span><div class="wf-step-source"><span class="wf-badge wb-r1">Marketing Plugin · long-form-writer</span></div></div></li>
+      </ol>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── LEGAL & CONTRACTS ─────────────────────────────────────────────── -->
+<div class="wf-group" id="wg-legal">
+  <div class="wf-group-label">Legal &amp; Contracts</div>
+  <div class="wf-cards">
+
+    <div class="wf-card">
+      <div class="wf-card-header">
+        <div class="wf-icon" style="background:#1f0d0d;">📑</div>
+        <div>
+          <div class="wf-title">Review &amp; Sign a Vendor Contract</div>
+          <div class="wf-tagline">NDA → commercial terms → pricing → sign-off</div>
+        </div>
+      </div>
+      <ol class="wf-steps">
+        <li class="wf-step"><span class="wf-step-num">1</span><div class="wf-step-body"><span class="wf-step-action">Review NDA — flag risky confidentiality &amp; IP clauses</span><div class="wf-step-source"><span class="wf-badge wb-r5">claude-for-legal · commercial-legal · nda-review</span><span class="wf-badge wb-r1">Legal Plugin · nda-checker</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">2</span><div class="wf-step-body"><span class="wf-step-action">Review MSA/SaaS agreement against your standard playbook</span><div class="wf-step-source"><span class="wf-badge wb-r5">commercial-legal · msa-review, saas-review</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">3</span><div class="wf-step-body"><span class="wf-step-action">Build pricing model — TCO, break-even, scenario analysis</span><div class="wf-step-source"><span class="wf-badge wb-r3">financial-services · model-builder</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">4</span><div class="wf-step-body"><span class="wf-step-action">Log contract &amp; vendor in operations tracker</span><div class="wf-step-source"><span class="wf-badge wb-r1">Operations Plugin · vendor-management</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">5</span><div class="wf-step-body"><span class="wf-step-action">GDPR/data-processing addendum if vendor touches personal data</span><div class="wf-step-source"><span class="wf-badge wb-r5">privacy-legal · dpa-review</span></div></div></li>
+      </ol>
+      <div class="wf-tip">Always verify legal conclusions with a qualified lawyer before signing.</div>
+    </div>
+
+    <div class="wf-card">
+      <div class="wf-card-header">
+        <div class="wf-icon" style="background:#1f0d0d;">⚖️</div>
+        <div>
+          <div class="wf-title">Handle a Workplace Investigation</div>
+          <div class="wf-tagline">Complaint → evidence → outcome → documentation</div>
+        </div>
+      </div>
+      <ol class="wf-steps">
+        <li class="wf-step"><span class="wf-step-num">1</span><div class="wf-step-body"><span class="wf-step-action">Triage complaint &amp; build investigation plan</span><div class="wf-step-source"><span class="wf-badge wb-r5">employment-legal · investigation-planner</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">2</span><div class="wf-step-body"><span class="wf-step-action">Draft interview questions for witnesses</span><div class="wf-step-source"><span class="wf-badge wb-r5">employment-legal · interview-guide</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">3</span><div class="wf-step-body"><span class="wf-step-action">Review relevant employment contracts &amp; policies</span><div class="wf-step-source"><span class="wf-badge wb-r5">employment-legal · contract-review</span><span class="wf-badge wb-r1">HR Plugin · policy-checker</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">4</span><div class="wf-step-body"><span class="wf-step-action">Draft investigation report with findings &amp; recommendations</span><div class="wf-step-source"><span class="wf-badge wb-r5">employment-legal · outcome-report</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">5</span><div class="wf-step-body"><span class="wf-step-action">Update HR records &amp; check compensation implications</span><div class="wf-step-source"><span class="wf-badge wb-r1">HR Plugin · compensation-analysis</span></div></div></li>
+      </ol>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── FINANCE & INVESTMENT ──────────────────────────────────────────── -->
+<div class="wf-group" id="wg-finance">
+  <div class="wf-group-label">Finance &amp; Investment</div>
+  <div class="wf-cards">
+
+    <div class="wf-card">
+      <div class="wf-card-header">
+        <div class="wf-icon" style="background:#1a3a2a;">📈</div>
+        <div>
+          <div class="wf-title">Morning Market Prep</div>
+          <div class="wf-tagline">Pre-market brief to first trade idea</div>
+        </div>
+      </div>
+      <ol class="wf-steps">
+        <li class="wf-step"><span class="wf-step-num">1</span><div class="wf-step-body"><span class="wf-step-action">Pre-market morning note — macro, sector moves, watchlist</span><div class="wf-step-source"><span class="wf-badge wb-r3">financial-services · equity-research · morning-note</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">2</span><div class="wf-step-body"><span class="wf-step-action">Screen for earnings surprises &amp; analyst revisions overnight</span><div class="wf-step-source"><span class="wf-badge wb-r3">earnings-reviewer · surprise-screener</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">3</span><div class="wf-step-body"><span class="wf-step-action">Deep-dive company research on top conviction name</span><div class="wf-step-source"><span class="wf-badge wb-r3">market-researcher · company-deep-dive</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">4</span><div class="wf-step-body"><span class="wf-step-action">Check for pending litigation or regulatory filings (10-K risk)</span><div class="wf-step-source"><span class="wf-badge wb-r5">claude-for-legal · regulatory-tracker</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">5</span><div class="wf-step-body"><span class="wf-step-action">Write daily investment journal entry</span><div class="wf-step-source"><span class="wf-badge wb-r1">Productivity Plugin · journal-writer</span></div></div></li>
+      </ol>
+    </div>
+
+    <div class="wf-card">
+      <div class="wf-card-header">
+        <div class="wf-icon" style="background:#1a3a2a;">🏦</div>
+        <div>
+          <div class="wf-title">Run an M&amp;A Deal Process</div>
+          <div class="wf-tagline">Target screening to term sheet</div>
+        </div>
+      </div>
+      <ol class="wf-steps">
+        <li class="wf-step"><span class="wf-step-num">1</span><div class="wf-step-body"><span class="wf-step-action">Screen targets — revenue, growth, margin, fit criteria</span><div class="wf-step-source"><span class="wf-badge wb-r3">financial-services · market-researcher · target-screener</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">2</span><div class="wf-step-body"><span class="wf-step-action">Build DCF &amp; LBO model on shortlisted targets</span><div class="wf-step-source"><span class="wf-badge wb-r3">model-builder · dcf-builder, lbo-model</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">3</span><div class="wf-step-body"><span class="wf-step-action">Legal due diligence — review NDAs, IP ownership, employment agreements</span><div class="wf-step-source"><span class="wf-badge wb-r5">commercial-legal · nda-review</span><span class="wf-badge wb-r5">ip-legal · ownership-check</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">4</span><div class="wf-step-body"><span class="wf-step-action">GDPR/privacy audit of target's data practices</span><div class="wf-step-source"><span class="wf-badge wb-r5">privacy-legal · data-audit</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">5</span><div class="wf-step-body"><span class="wf-step-action">Draft CIM / investor pitch deck</span><div class="wf-step-source"><span class="wf-badge wb-r3">pitch-agent · cim-builder</span></div></div></li>
+      </ol>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── PERSONAL & FREELANCE ──────────────────────────────────────────── -->
+<div class="wf-group" id="wg-personal">
+  <div class="wf-group-label">Personal &amp; Freelance</div>
+  <div class="wf-cards">
+
+    <div class="wf-card">
+      <div class="wf-card-header">
+        <div class="wf-icon" style="background:#271a4a;">🧑‍💼</div>
+        <div>
+          <div class="wf-title">Start a Freelance Engagement</div>
+          <div class="wf-tagline">From prospect to signed &amp; invoiced</div>
+        </div>
+      </div>
+      <ol class="wf-steps">
+        <li class="wf-step"><span class="wf-step-num">1</span><div class="wf-step-body"><span class="wf-step-action">Research the client company before the first call</span><div class="wf-step-source"><span class="wf-badge wb-r1">Sales Plugin · company-researcher</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">2</span><div class="wf-step-body"><span class="wf-step-action">Draft personalized outreach &amp; proposal email</span><div class="wf-step-source"><span class="wf-badge wb-r1">Sales Plugin · outreach-writer</span><span class="wf-badge wb-r1">Marketing Plugin · email-writer</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">3</span><div class="wf-step-body"><span class="wf-step-action">Review or draft the freelance MSA / SOW before signing</span><div class="wf-step-source"><span class="wf-badge wb-r5">commercial-legal · msa-review, sow-review</span><span class="wf-badge wb-r1">Legal Plugin · contract-review</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">4</span><div class="wf-step-body"><span class="wf-step-action">Set project rate &amp; cashflow model</span><div class="wf-step-source"><span class="wf-badge wb-r3">financial-services · model-builder</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">5</span><div class="wf-step-body"><span class="wf-step-action">Write project kick-off summary &amp; keep session memory</span><div class="wf-step-source"><span class="wf-badge wb-r1">Productivity Plugin · session-memory</span></div></div></li>
+      </ol>
+      <div class="wf-tip">Always verify legal advice with a real lawyer — the legal plugins flag issues but don't substitute for counsel.</div>
+    </div>
+
+    <div class="wf-card">
+      <div class="wf-card-header">
+        <div class="wf-icon" style="background:#201500;">✍️</div>
+        <div>
+          <div class="wf-title">Build a Personal Brand &amp; Blog</div>
+          <div class="wf-tagline">From idea to published post with SEO</div>
+        </div>
+      </div>
+      <ol class="wf-steps">
+        <li class="wf-step"><span class="wf-step-num">1</span><div class="wf-step-body"><span class="wf-step-action">Research competitor content &amp; keyword gaps</span><div class="wf-step-source"><span class="wf-badge wb-r1">Marketing Plugin · competitive-analysis, seo-audit</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">2</span><div class="wf-step-body"><span class="wf-step-action">Plan 3-month content calendar with goals</span><div class="wf-step-source"><span class="wf-badge wb-r1">Marketing Plugin · campaign-planner</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">3</span><div class="wf-step-body"><span class="wf-step-action">Write the long-form post &amp; repurpose to social threads</span><div class="wf-step-source"><span class="wf-badge wb-r1">Marketing Plugin · long-form-writer, social-post-writer</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">4</span><div class="wf-step-body"><span class="wf-step-action">Check content for copyright / IP issues before publishing</span><div class="wf-step-source"><span class="wf-badge wb-r5">ip-legal · content-ip-check</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">5</span><div class="wf-step-body"><span class="wf-step-action">Track performance &amp; update session memory for continuity</span><div class="wf-step-source"><span class="wf-badge wb-r1">Productivity Plugin · session-memory</span></div></div></li>
+      </ol>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── STARTUP & BUSINESS ─────────────────────────────────────────────── -->
+<div class="wf-group" id="wg-startup">
+  <div class="wf-group-label">Startup &amp; Business</div>
+  <div class="wf-cards">
+
+    <div class="wf-card">
+      <div class="wf-card-header">
+        <div class="wf-icon" style="background:#1a3a2a;">🚀</div>
+        <div>
+          <div class="wf-title">Raise a Seed Round</div>
+          <div class="wf-tagline">From deck to signed term sheet</div>
+        </div>
+      </div>
+      <ol class="wf-steps">
+        <li class="wf-step"><span class="wf-step-num">1</span><div class="wf-step-body"><span class="wf-step-action">Build financial model — 3-year projections, unit economics</span><div class="wf-step-source"><span class="wf-badge wb-r3">financial-services · model-builder</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">2</span><div class="wf-step-body"><span class="wf-step-action">Write investor pitch deck narrative</span><div class="wf-step-source"><span class="wf-badge wb-r3">pitch-agent · pitch-writer</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">3</span><div class="wf-step-body"><span class="wf-step-action">Competitive landscape &amp; market sizing section</span><div class="wf-step-source"><span class="wf-badge wb-r1">Product Management Plugin · competitive-analysis</span><span class="wf-badge wb-r3">market-researcher</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">4</span><div class="wf-step-body"><span class="wf-step-action">Review term sheet &amp; SAFE note from investors</span><div class="wf-step-source"><span class="wf-badge wb-r5">commercial-legal · term-sheet-review</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">5</span><div class="wf-step-body"><span class="wf-step-action">IP audit — assign all founder IP to the company before close</span><div class="wf-step-source"><span class="wf-badge wb-r5">ip-legal · ip-assignment-review</span></div></div></li>
+      </ol>
+    </div>
+
+    <div class="wf-card">
+      <div class="wf-card-header">
+        <div class="wf-icon" style="background:#0d1629;">🛠️</div>
+        <div>
+          <div class="wf-title">Ship a New Product Feature</div>
+          <div class="wf-tagline">From user feedback to deployed &amp; documented</div>
+        </div>
+      </div>
+      <ol class="wf-steps">
+        <li class="wf-step"><span class="wf-step-num">1</span><div class="wf-step-body"><span class="wf-step-action">Synthesize user interviews &amp; write the PRD</span><div class="wf-step-source"><span class="wf-badge wb-r1">Product Management Plugin · prd-writer</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">2</span><div class="wf-step-body"><span class="wf-step-action">Design review — UX critique &amp; accessibility audit</span><div class="wf-step-source"><span class="wf-badge wb-r1">Design Plugin · design-critique, accessibility-audit</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">3</span><div class="wf-step-body"><span class="wf-step-action">Code review &amp; security audit before merge</span><div class="wf-step-source"><span class="wf-badge wb-r1">Engineering Plugin · code-reviewer</span><span class="wf-badge wb-r2">Official · pr-reviewer</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">4</span><div class="wf-step-body"><span class="wf-step-action">Write launch blog post &amp; social announcement</span><div class="wf-step-source"><span class="wf-badge wb-r1">Marketing Plugin · launch-post-writer</span></div></div></li>
+        <li class="wf-step"><span class="wf-step-num">5</span><div class="wf-step-body"><span class="wf-step-action">Monitor incident response — runbook ready if something breaks</span><div class="wf-step-source"><span class="wf-badge wb-r1">Engineering Plugin · incident-responder</span></div></div></li>
+      </ol>
+    </div>
+
+  </div>
+</div>
+
+</section><!-- end #tab-workflows -->
 <script>
 function switchTab(tab){
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-  document.querySelectorAll('#tab-overview,#tab-skills').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('#tab-overview,#tab-skills,#tab-workflows').forEach(s=>s.classList.remove('active'));
   document.querySelector('.tab-btn[data-tab="'+tab+'"]').classList.add('active');
   document.getElementById('tab-'+tab).classList.add('active');
   document.getElementById('nav-overview').style.display=tab==='overview'?'flex':'none';
   document.getElementById('nav-skills').style.display=tab==='skills'?'flex':'none';
+  document.getElementById('nav-workflows').style.display=tab==='workflows'?'flex':'none';
 }
 function toggle(btn){
   btn.classList.toggle('open');
